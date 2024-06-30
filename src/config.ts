@@ -45,7 +45,7 @@ export const profileConfig: ProfileConfig = {
     {
       name: 'Instagram',
       icon: 'fa6-brands:instagram',
-      url: 'https://github.com/xixn2',
+      url: 'https://instagram.com/xixn2._8',
     },
     {
       name: 'Email',
