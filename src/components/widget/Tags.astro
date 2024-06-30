@@ -1,0 +1,52 @@
+---
+
+import ButtonTag from '../control/ButtonTag.astro'
+import WidgetLayout from './WidgetLayout.astro'
+
+const tags = [
+  {
+    name: 'Swift',
+    href: '',
+  },
+  {
+    name: 'SwiftUI',
+    href: '',
+  },
+  {
+    name: 'UIKit',
+    href: '',
+  },
+  {
+    name: 'Tuist',
+    href: '',
+  },
+  {
+    name: 'Moya',
+    href: '',
+  },
+  {
+    name: 'Combine',
+    href: '',
+  },
+]
+
+const COLLAPSED_HEIGHT = '7.5rem'
+
+const isCollapsed = tags.length >= 20
+
+interface Props {
+  class?: string
+  style?: string
+}
+const className = Astro.props.class
+const style = Astro.props.style
+---
+<WidgetLayout name={"Skill"} id="tags" isCollapsed={isCollapsed} collapsedHeight={COLLAPSED_HEIGHT} class={className} style={style}>
+    <div class="flex gap-2 flex-wrap">
+        {tags.map(t => (
+            <ButtonTag href={t.href} label={`View all posts with the ${t.name} tag`}>
+                {t.name}
+            </ButtonTag>
+        ))}
+    </div>
+</WidgetLayout>
